@@ -11,7 +11,7 @@ import {
   MDBIcon,
   MDBInput
 } from 'mdb-react-ui-kit'
-
+import Navbr from '../components/Navbr'
 function Login() {
 
     const [email,setemail]=useState('')
@@ -28,6 +28,7 @@ console.log(data)
 
   return (
    <>
+  
     <MDBContainer className="my-5">
 
 <MDBCard>
