@@ -12,9 +12,9 @@ import {
   MDBInput
 } from 'mdb-react-ui-kit'
 import Navbr from '../components/Navbr'
-import { Navigate } from 'react-router-dom'
+import { Navigate,useNavigate } from 'react-router-dom'
 function Login() {
-
+const navigate=useNavigate()
     const [email,setemail]=useState('')
     const [password,setpassw]=useState('')
 
@@ -22,9 +22,9 @@ const data={}
    const CheckData=()=>{
 data.email=email
 data.password=password
-if(data.email==='admin123@gmail.com' && data.password==="admin123@")
+if(data.email==='admin123@gmail.com' && data.password==='admin123@')
 {
-    Navigate('/home')
+  navigate('/home')
 }
 else
 {
