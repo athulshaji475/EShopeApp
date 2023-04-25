@@ -6,7 +6,7 @@ import Login from './Login'
 function PgNotefound() {
   return (
     <div>
-    <Login/>
+    <h1>Page not found</h1>
      
     </div>
   )

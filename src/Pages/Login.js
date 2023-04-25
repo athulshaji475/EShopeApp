@@ -12,6 +12,7 @@ import {
   MDBInput
 } from 'mdb-react-ui-kit'
 import Navbr from '../components/Navbr'
+import { Navigate } from 'react-router-dom'
 function Login() {
 
     const [email,setemail]=useState('')
@@ -21,7 +22,14 @@ const data={}
    const CheckData=()=>{
 data.email=email
 data.password=password
-console.log(data)
+if(data.email==='admin123@gmail.com' && data.password==="admin123@")
+{
+    Navigate('/home')
+}
+else
+{
+    alert("Invalid credentials..!")
+}
    }
 
 

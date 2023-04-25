@@ -14,6 +14,7 @@ function Navbr() {
         <Container>
           <Navbar.Brand ><span>ESopee</span></Navbar.Brand>
           <Nav className="me-auto">
+          <Nav.Link ><Link to='/home'>Home</Link></Nav.Link>
             <Nav.Link ><Link to='/'>Login</Link></Nav.Link>
             <Nav.Link >Features</Nav.Link>
             <Nav.Link href="#pricing">Pricing</Nav.Link>
