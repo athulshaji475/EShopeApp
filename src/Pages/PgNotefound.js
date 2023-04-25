@@ -1,12 +1,13 @@
 import React from 'react'
 import Navbr from '../components/Navbr'
+import Login from './Login'
 
 
 function PgNotefound() {
   return (
     <div>
-    <Navbr/>
-      <h3>Page Not Found.......!</h3>
+    <Login/>
+     
     </div>
   )
 }
