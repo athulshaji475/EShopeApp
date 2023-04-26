@@ -1,11 +1,22 @@
 import React from 'react'
 import Cards from '../components/Cards'
+import { Navbar } from 'react-bootstrap'
+import Navbr from '../components/Navbr'
 
 function ItemsLlist({items}) {
-    console.log()
+    console.log(items)
   return (
     <div>
-      <Cards/>
+    <Navbr/>
+
+    <br/>
+    <br/>
+     {
+        
+       items.map((innddata)=>{
+       return  <Cards   dataset={innddata}  key={innddata.key} />
+       }) 
+     } 
     </div>
   )
 }
