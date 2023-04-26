@@ -1,8 +1,8 @@
 import React from 'react'
 import Cards from '../components/Cards'
 
-function ItemsLlist({GetItemDatas}) {
-    console.log(GetItemDatas)
+function ItemsLlist({items}) {
+    console.log()
   return (
     <div>
       <Cards/>
