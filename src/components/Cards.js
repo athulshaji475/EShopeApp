@@ -1,14 +1,16 @@
 import React from 'react'
 import {Card, CardGroup, Button} from "react-bootstrap";
 import '../Css/card.css';
-function Card() {
+
+function Cards() {
   return (
     <div>
-       <CardGroup>
+       <CardGroup style={{width:'auto'}}>
            
-                    <Card className={"card-grid"} key={index}>
-                        <Card.Img className={"card-img"} variant="bottom" src={"https://cdn.pixabay.com/photo/2014/11/30/14/11/cat-551554_960_720.jpg"}/>
+                    <Card className={"card-grid"}>
+                        <Card.Img className={"card-img"}  variant="bottom" src={"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSUO7WZsrUlz6XT-6-e07YnghUoF6r-9w_0tQ&usqp=CAU"}/>
                         <Card.Body>
+                        
                             <Card.Title><strong>{'name'}</strong></Card.Title>
                             <Card.Text>
                                 <p>
@@ -28,4 +30,4 @@ function Card() {
   )
 }
 
-export default Card
+export default Cards
