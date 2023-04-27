@@ -6,6 +6,7 @@ import PgNotefound from './Pages/PgNotefound';
 import Homepage from './Pages/Homepage';
 import { useState } from 'react';
 import ItemsLlist from './Pages/ItemsLlist';
+import Userhome from './Pages/Userhome';
 
 function App() {
 
@@ -22,7 +23,7 @@ const [Itemlist, setItemlist] = useState([])
         <Routes>
          <Route exact path='/' element={<Login/>}/>
          <Route  path='*' element={<Login/>}/>
-       
+       <Route path='/user' element={<Userhome/>}/>
          <Route  path='/login' element={<Login/>}/>
          <Route path='/home' element={<Homepage  GetItemDatas={SetDatas} items={Itemlist} />}/>
          <Route path='/items' element={<ItemsLlist items={Itemlist} />}/>

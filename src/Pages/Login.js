@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import '../App.css'
+import { useEffect } from 'react'
 import {
   MDBBtn,
   MDBContainer,
@@ -11,25 +12,45 @@ import {
   MDBIcon,
   MDBInput
 } from 'mdb-react-ui-kit'
-import Navbr from '../components/Navbr'
-import { Navigate,useNavigate } from 'react-router-dom'
+
+import { useNavigate } from 'react-router-dom'
 function Login() {
+
+
+
 const navigate=useNavigate()
-    const [email,setemail]=useState('')
-    const [password,setpassw]=useState('')
+const [email,setemail]=useState('')
+const [password,setpassw]=useState('')
+
+
+useEffect(() => {
+  localStorage.setItem('email', JSON.stringify(email));
+}, [email]);
+
+useEffect(() => {
+  localStorage.setItem('password', JSON.stringify(password));
+},);
+
 
 const data={}
-   const CheckData=()=>{
+
+const CheckData=()=>{
 data.email=email
 data.password=password
+
+
+
 if(data.email==='admin123@gmail.com' && data.password==='admin123@')
 {
   navigate('/home')
-}
-else
+}else if(data.email==='user123@gmail.com' && data.password==='user123@')
 {
-    alert("Invalid credentials..!")
+  navigate('/user')
 }
+else{
+  alert("Invalid Credentials..")
+}
+
    }
 
 
