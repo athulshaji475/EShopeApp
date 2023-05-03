@@ -7,6 +7,7 @@ import Homepage from './Pages/Homepage';
 import { useState } from 'react';
 import ItemsLlist from './Pages/ItemsLlist';
 import Userhome from './Pages/Userhome';
+import Itemview from './Pages/Itemview';
 
 function App() {
 
@@ -27,6 +28,7 @@ const [Itemlist, setItemlist] = useState([])
          <Route  path='/login' element={<Login/>}/>
          <Route path='/home' element={<Homepage  GetItemDatas={SetDatas} items={Itemlist} />}/>
          <Route path='/items' element={<ItemsLlist items={Itemlist} />}/>
+         <Route path='/Listview' element={<Itemview/>}/>
         </Routes>
       </BrowserRouter>
     </>

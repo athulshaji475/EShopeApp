@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import axios from 'axios';
 import {
     MDBBtn,
     MDBContainer,
@@ -19,21 +20,38 @@ function Additems({GetItemData}) {
     const [description,setdescription]=useState('')
     const [catogory,setcatogory]=useState('')
    
-    const Itemdata={}
-
+    
+   
     const GetAllData=()=>{
-     
-      Itemdata.Name=item
+      const Itemdata={id:0,item:'',price:0.00,description:'',catogory:'',key:0,fav:false}
+     Itemdata.id=0
+      Itemdata.item=item
       Itemdata.price=price
       Itemdata.description=description
       Itemdata.catogory=catogory
-      Itemdata.key=Date.now()
+      Itemdata.key=0
       Itemdata.fav=false
-      console.log("List from additepage"+Itemdata.Name)
+      
       GetItemData(Itemdata)
-
-      console.log(Itemdata);
-    }
+      console.log(Itemdata)
+      axios.post('http://localhost:58035/api/Users',Itemdata)
+      .then(response => {
+        
+        
+     
+        
+        if(response.data[0].error!=0)
+        {
+          alert("Data Enterd successfully....!")
+        }
+        })
+      .catch(error => {
+        console.log(error);
+      });
+    
+      
+      };
+      
 
   return (
     <div>

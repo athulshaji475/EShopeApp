@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import axios from 'axios'
 import '../App.css'
 import { useEffect } from 'react'
 import {
@@ -29,16 +30,28 @@ useEffect(() => {
 
 useEffect(() => {
   localStorage.setItem('password', JSON.stringify(password));
-},);
+}, [password]);
 
 
-const data={}
-
-const CheckData=()=>{
+let data={}
 data.email=email
 data.password=password
+data.uname=""
+data.id=0
 
+const CheckData=()=>{
 
+console.log(data)
+
+axios.post('http://localhost:58035/api/Login',data)
+.then((response)=>{
+  try {
+   console.log(response.data)
+  } catch (error) {
+    console.log(error)
+    
+  }
+})
 
 if(data.email==='admin123@gmail.com' && data.password==='admin123@')
 {

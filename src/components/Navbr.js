@@ -20,8 +20,7 @@ function Navbr() {
             <Nav.Link ><Link to='/home'>Home</Link></Nav.Link>
             <Nav.Link ><Link to='/items'>Items</Link></Nav.Link>
             <Nav.Link ><Link to='/'>LogOut</Link></Nav.Link>
-            
-            <Nav.Link href="#pricing">Pricing</Nav.Link>
+            <Nav.Link ><Link  to='/Listview' >Listview</Link></Nav.Link>
           </Nav>
         </Container>
       </Navbar>
