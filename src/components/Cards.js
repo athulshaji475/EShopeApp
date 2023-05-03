@@ -1,9 +1,11 @@
 import React from 'react'
 import {Card, CardGroup, Button} from "react-bootstrap";
+import { Navigate, useNavigate,Link } from 'react-router-dom';
 import '../Css/card.css';
 
 function Cards({dataset}) {
-  console.log(dataset)
+ 
+  
   return (
     <div>
     {
@@ -11,7 +13,7 @@ function Cards({dataset}) {
        <CardGroup style={{width:'auto'}}>
            
                     <Card className={"card-grid"}>
-                        <Card.Img className={"card-img"}  variant="bottom" src={"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSUO7WZsrUlz6XT-6-e07YnghUoF6r-9w_0tQ&usqp=CAU"}/>
+                        <Card.Img className={"card-img"}  variant="bottom" src={"https://t1.gstatic.com/licensed-image?q=tbn:ANd9GcR61F36y-FxJ1SuhuKrBUmJeQtWyklBOtf_QcqLNnziuboOyVCBPXjSiJsNqIQ_AIvd"}/>
                         <Card.Body>
                         
                             <Card.Title><strong>{dataset.name}</strong></Card.Title>
@@ -25,11 +27,14 @@ function Cards({dataset}) {
                                 dataset.catogory
                                }
                             </Card.Text>
+                            <Link to='/billing'>
                             <Button variant="primary"
                                     href="www.google.com"
-                                    rel={"noopener noreferrer"}>
-                                Learn More
+                                    rel={"noopener noreferrer"}
+                                    >
+                                By Now
                             </Button>
+                            </Link>
                         </Card.Body>
                     </Card>
             

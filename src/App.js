@@ -8,6 +8,7 @@ import { useState } from 'react';
 import ItemsLlist from './Pages/ItemsLlist';
 import Userhome from './Pages/Userhome';
 import Itemview from './Pages/Itemview';
+import Billing from './Pages/Billing';
 
 function App() {
 
@@ -35,6 +36,7 @@ console.log("itm new=>"+itmnew)
          <Route path='/home' element={<Homepage  GetItemDatas={SetDatas} items={Itemlist} />}/>
          <Route path='/items' element={<ItemsLlist items={itmnew}  />}/>
          <Route path='/Listview' element={<Itemview  getitems={Getitemview}    />}/>
+         <Route path='/Billing' element={<Billing/>}/>
         </Routes>
       </BrowserRouter>
     </>

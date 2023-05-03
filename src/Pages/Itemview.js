@@ -20,11 +20,7 @@ useEffect(() => {
   })
 }, [])
 
-const Getdata=()=>{
-   
-    
 
-}
     
     
 
@@ -59,7 +55,7 @@ const Getdata=()=>{
       
       
     </Table>
-    <button onClick={Getdata}></button>
+    
     </div>
   )
 }

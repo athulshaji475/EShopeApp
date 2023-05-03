@@ -22,7 +22,7 @@
 .card-img-top,
 .card-img-bottom {
     height: 10rem;
-    width: auto;
+    width: 200px;
     align-content: flex-start;
 }
 
