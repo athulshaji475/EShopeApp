@@ -4,7 +4,7 @@ import axios from 'axios'
 import { useEffect } from 'react'
 import { useState } from 'react'
 import Usernav from '../components/Usernav'
-function Itemview() {
+function Itemview({getitems}) {
 const [datas,setdatas] = useState([])
 
 useEffect(() => {
@@ -12,7 +12,8 @@ useEffect(() => {
   .then((respons)=>{
       try {
           setdatas(respons.data)
-          console.log(respons.data)
+          console.log("response=>"+respons.data)
+          getitems(respons.data)
       } catch (error) {
           console.log(error)
       }

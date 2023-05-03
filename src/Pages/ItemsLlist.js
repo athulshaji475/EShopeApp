@@ -4,7 +4,7 @@ import { Navbar } from 'react-bootstrap'
 import Navbr from '../components/Navbr'
 
 function ItemsLlist({items}) {
-    console.log(items)
+    console.log("passed items"+items)
   return (
     <div>
     <Navbr/>
@@ -14,7 +14,14 @@ function ItemsLlist({items}) {
      {
         
        items.map((innddata)=>{
-       return  <Cards   dataset={innddata}  key={innddata.key} />
+
+        //console.log(innddata)
+
+      return  innddata.map((d)=>{
+          console.log(d)
+          return  <Cards   dataset={d}   key={d.id} />
+        })
+      
        }) 
      } 
     </div>

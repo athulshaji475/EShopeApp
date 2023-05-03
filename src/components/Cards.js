@@ -3,15 +3,18 @@ import {Card, CardGroup, Button} from "react-bootstrap";
 import '../Css/card.css';
 
 function Cards({dataset}) {
+  console.log(dataset)
   return (
     <div>
+    {
+
        <CardGroup style={{width:'auto'}}>
            
                     <Card className={"card-grid"}>
                         <Card.Img className={"card-img"}  variant="bottom" src={"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSUO7WZsrUlz6XT-6-e07YnghUoF6r-9w_0tQ&usqp=CAU"}/>
                         <Card.Body>
                         
-                            <Card.Title><strong>{dataset.Name}</strong></Card.Title>
+                            <Card.Title><strong>{dataset.name}</strong></Card.Title>
                             <Card.Text>
                                {
                                 dataset.price
@@ -31,6 +34,7 @@ function Cards({dataset}) {
                     </Card>
             
         </CardGroup>
+    }
     </div>
   )
 }
