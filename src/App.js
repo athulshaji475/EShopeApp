@@ -9,6 +9,7 @@ import ItemsLlist from './Pages/ItemsLlist';
 import Userhome from './Pages/Userhome';
 import Itemview from './Pages/Itemview';
 import Billing from './Pages/Billing';
+import Billingform from './components/Billingform';
 
 function App() {
 
@@ -37,6 +38,7 @@ console.log("itm new=>"+itmnew)
          <Route path='/items' element={<ItemsLlist items={itmnew}  />}/>
          <Route path='/Listview' element={<Itemview  getitems={Getitemview}    />}/>
          <Route path='/Billing' element={<Billing/>}/>
+         <Route path='/Bform' element={<Billingform/>}/>
         </Routes>
       </BrowserRouter>
     </>

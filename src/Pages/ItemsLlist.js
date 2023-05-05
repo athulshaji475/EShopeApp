@@ -18,7 +18,7 @@ function ItemsLlist({items}) {
         //console.log(innddata)
 
       return  innddata.map((d)=>{
-          console.log(d)
+         
           return  <Cards   dataset={d}   key={d.id} />
         })
       

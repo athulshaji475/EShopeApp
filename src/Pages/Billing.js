@@ -1,7 +1,17 @@
 import React from 'react'
 import { useNavigate } from 'react-router-dom';
-
+import Billingform from '../components/Billingform';
+import { useLocation } from 'react-router-dom';
 function Billing() {
+  try {
+    const location = useLocation();
+  const { data } = location.state;
+  
+  console.log(data);
+  } catch (error) {
+    console.log(error)
+  }
+  
     const myStyle = {
         backgroundColor: 'green',
         color: 'white',
@@ -10,12 +20,10 @@ function Billing() {
         borderRadius: '5px',
       };
   let  nav=useNavigate()
-    setTimeout(() => {
-        nav('/items')
-    },300);
+   nav('/Billing')
   return (
-    <div style={myStyle} >
-      <h4 >Your Order Placed Successfully........!</h4>
+    <div>
+     <Billingform/>
     </div>
   )
 }
