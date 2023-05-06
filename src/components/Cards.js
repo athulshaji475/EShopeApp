@@ -4,23 +4,26 @@ import { Link ,useNavigate } from 'react-router-dom';
 
 import '../Css/card.css';
 import Billingform from './Billingform';
+import Billing from '../Pages/Billing';
 
 function Cards({ dataset }) {
-  const [data,setdata]=useState([])
-
-  const navigate=useNavigate()
  
+  //const [data,setdata]=useState(0)
+  const navigate=useNavigate()
+  
 //-------------------------------------------------------------------
 const getdata=(e)=>{
   try {
    
     console.log("test"+e.target.value)
+     const temp=e.target.value
+   // setdata(temp)
+   //alert(temp)
+    console.log("temp"+temp)
+    //console.log("data"+data)
     
-    setdata(e.target.value)
-    console.log("data"+data)
-   
 
-  navigate('/Billing')
+    navigate(`/Billing?temp=${temp}`);
   } catch (error) {
     console.log(error)
   }
@@ -53,9 +56,9 @@ const getdata=(e)=>{
               <br />
               {dataset.catogory}
             </Card.Text>
-            <Link to= '/Billing'  >
-              <Button variant='primary'  onClick={getdata} value={dataset}>Buy Now</Button>
-            </Link>
+            
+              <Button variant='primary'  onClick={getdata} value={dataset.id}>Buy Now</Button>
+            
           </Card.Body>
         </Card>
       </CardGroup>

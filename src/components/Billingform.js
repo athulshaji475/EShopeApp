@@ -4,15 +4,17 @@ import { Link } from 'react-router-dom';
 import '../Css/card.css';
 import Navbr from './Navbr';
 import axios from 'axios';
+import { StrictMode } from 'react';
 
-function Billingform() {
+function Billingform({itid}) {
+  console.log("data from billingform"+itid)
   const [data,setdata]=useState([])
   const [name,setname]=useState('')
   const [address,setaddress]=useState('')
   const [phone,setphone]=useState('')
   const [tid,settid]=useState('')
-
-
+const [def,setdef]=useState('')
+const [price,setprice]=useState(0)
 
 
 //-------------------------------------------------------------------
@@ -22,6 +24,14 @@ useEffect(()=>{
  .then((response)=>{
   console.log(response.data)
   setdata(response.data)
+  const item = response.data.find((d) => d.id == itid);
+      if (item) {
+        setdef(item.name)
+        setprice(item.price)
+        
+      } else {
+        console.log(`Item with id ${itid} not found.`);
+      }
   
  },(error)=>{
   console.log(error)
@@ -31,9 +41,15 @@ useEffect(()=>{
     console.log(error)
   }
  
- 
-
 },[])
+
+
+
+  
+const Loaddata=(e)=>{
+  
+}
+
 
 
 //--------------------------------------------------------------------
@@ -74,18 +90,19 @@ const handleSelect=(event)=>{
                 
 
                
-               <select onChange={handleSelect}>
-              <option value=''>Select an item</option>
+               <select onChange={handleSelect}  class="dropdown" style={{width:"200px",fontSize:"30px",borderBlockStyle:'none'}}>
+              <option value=''>{def}</option>
               {data.map((d) => (
-                <option key={d.id} value={d.id}>
+               
+                <option  key={d.id} value={d.id}>
                   {d.name}
                 </option>
               ))}
               </select>
               
           
-               
-                   <Card.Title><strong></strong></Card.Title>
+               <br></br>
+                   <Card.Title><strong><h3 style={{color:'red'}}>Price:{price}</h3></strong></Card.Title>
                    <Card.Text>
                      <input type='Text' 
                      class="form-control" 
