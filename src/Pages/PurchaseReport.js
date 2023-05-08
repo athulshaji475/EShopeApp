@@ -12,16 +12,41 @@ const [items,setitems]=useState([])
 useEffect(() => {
   axios.get('http://localhost:58035/api/Purchase')
   .then((response)=>{
-    console.log(response.data)
+   // console.log(response.data)
  setitems(response.data)
-console.log(items)
+//console.log(items)
     
   },(Error)=>{
     console.log(Error)
   })
+},[])
+
+//-------------refresh--------------------------------------------------------------
+const refresh =()=>{
+  
+  axios.get('http://localhost:58035/api/Purchase')
+  .then((response)=>{
+   // console.log(response.data)
+ setitems(response.data)
+//console.log(items)
+    
+  },(Error)=>{
+    console.log(Error)
+  })
+
+}
+//---------------------------------------------------------------------------------------
+
+const Deletitem=(e)=>{
+  
+  let id=e.target.value
+
+axios.get('http://localhost:58035/api/Purchase?id='+id)
+.then((resopnse)=>{
+  console.log(resopnse)
+ refresh()
 })
-
-
+}
 
 //------------------------------------------------------------------------
   return (
@@ -51,7 +76,7 @@ console.log(items)
       <td>{d.phone}</td>
       <td >{d.name}</td>
       <td >{d.price}</td>
-      <td>{<button style={{backgroundColor:'red',borderRadius:'10px',width:'auto',padding:15}}>Delete</button>}</td>
+      <td>{<button style={{backgroundColor:'red',borderRadius:'10px',width:'auto',padding:15}} value={d.id} onClick={Deletitem}>Delete</button>}</td>
       
     </tr>
     })
