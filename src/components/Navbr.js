@@ -21,6 +21,7 @@ function Navbr() {
             <Nav.Link ><Link to='/items'>Items</Link></Nav.Link>
             <Nav.Link ><Link to='/'>LogOut</Link></Nav.Link>
             <Nav.Link ><Link  to='/Listview' >Listview</Link></Nav.Link>
+            <Nav.Link ><Link  to='/Purchasereport' >Purchase Report</Link></Nav.Link>
           </Nav>
         </Container>
       </Navbar>

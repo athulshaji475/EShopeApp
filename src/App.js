@@ -10,6 +10,7 @@ import Userhome from './Pages/Userhome';
 import Itemview from './Pages/Itemview';
 import Billing from './Pages/Billing';
 import Billingform from './components/Billingform';
+import PurchaseReport from './Pages/PurchaseReport';
 
 function App() {
 
@@ -39,6 +40,7 @@ console.log("itm new=>"+itmnew)
          <Route path='/Listview' element={<Itemview  getitems={Getitemview}    />}/>
          <Route path='/Billing' element={<Billing/>}/>
          <Route path='/Bform' element={<Billingform/>}/>
+         <Route path='/Purchasereport' element={<PurchaseReport/>}/>
         </Routes>
       </BrowserRouter>
     </>
