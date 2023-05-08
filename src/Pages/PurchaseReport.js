@@ -41,10 +41,12 @@ const Deletitem=(e)=>{
   
   let id=e.target.value
 
-axios.get('http://localhost:58035/api/Purchase?id='+id)
+axios.delete('http://localhost:58035/api/Purchase?id='+id)
 .then((resopnse)=>{
   console.log(resopnse)
  refresh()
+}).catch((error)=>{
+  console.log(error)
 })
 }
 
